@@ -1,0 +1,92 @@
+.bg-image {
+  background-image: url("/images/login_background.jpg");
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-blur {
+  background-color: white;
+  width: 100%;
+  opacity: 0.8;
+  height: 100vh;
+}
+.login-form {
+  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+  padding: 50px;
+  width: 28%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9px;
+}
+.main-login-form {
+  width: 100%;
+  height: 100%;
+  /* margin: 28%; */
+}
+.login-img {
+  width: max-content;
+  padding: 35px 30px;
+  border-radius: 50px;
+  /* margin-top: 25px; */
+}
+.login-btn a,
+#forget a {
+  text-decoration: none;
+  color: white;
+}
+.main-form input {
+  background: transparent;
+  color: black !important;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  width: 100%;
+  background-position: left top center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 35px;
+  padding-bottom: 10px;
+}
+
+.main-form input[type="text"] {
+  background-image: url("/images/user.png");
+  filter: invert(100%);
+}
+
+.main-form input[type="password"] {
+  background-image: url("/images/lock.png");
+  filter: invert(100%);
+}
+.main-form ::placeholder {
+  color: black;
+}
+.main-form span {
+  font-size: 30px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+#Remember {
+  width: 5%;
+  margin-right: 8px;
+}
+#loginbtn {
+  text-decoration: none;
+  background-color: white;
+  color: rgb(178, 36, 239);
+  padding: 10px 40px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+}
+#forget-btn {
+  text-decoration: none;
+  color: white;
+}
+.forget {
+  margin-top: 70px;
+}
+.error {
+  color: red;
+}

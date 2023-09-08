@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="/css/table.css" />
+    <!-- BOOTSTRAP CSS LINK  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/jqueryToast/toast.css" />
+    <link rel="stylesheet" href="/datatable/datatable.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- BOOTSTRAP SCRIPT LINK  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand logo" href="#">
+          <img
+            src="/images/login-icon.svg"
+            alt="login-icon"
+            width="50%"
+            height="40px"
+            class="d-inline-block align-text-top"
+          />
+          AJAX
+        </a>
+        <div class="dropdown">
+          <button
+            class="btn btn-light"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/user.png"
+              class="profile-img"
+              alt="user"
+              width="auto"
+              height="30px"
+            />
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a class="dropdown-item" href="/html/profile.html" id="profile"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" id="logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <table id="myTable" class="display" style="width: 100%">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Rating</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="upadteModalLabel"
+      tabindex="-1"
+      aria-labelledby="upadteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="upadteModalLabel">Update</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="updateForm">
+              <div class="mb-3">
+                <label for="Brand" class="form-label">Brand</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Brand"
+                  aria-describedby="Brand"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Category" class="form-label">Category</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Category"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="Title" disabled />
+              </div>
+              <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Description"
+                  aria-describedby="Description"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="DiscountPercentage" class="form-label"
+                  >DiscountPercentage</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="DiscountPercentage"
+                  aria-describedby="DiscountPercentage"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Price" class="form-label">Price </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Price"
+                  aria-describedby="Price"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Rating" class="form-label">Rating </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Rating"
+                  aria-describedby="Rating"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Stock" class="form-label">Stock </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Stock"
+                  aria-describedby="Stock"
+                  disabled
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-success" id="edit-update-form">
+              Edit
+            </button>
+            <button type="submit" class="btn btn-primary" id="savebtn">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JQUERY CDN LINK -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/jqueryToast/toast.js"></script>
+    <script src="/datatable/datatable.js"></script>
+    <script src="/js/table.js"></script>
+    <!-- Validator CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+      integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/jqueryToast/toast.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
